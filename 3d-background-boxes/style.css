@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 设置按钮的位置，大小，颜色 */
+.btn {
+    border: 0;
+    background-color: rgb(72, 112, 171);
+    padding: 12px 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px rgba(72, 112, 171, 0.8);
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    letter-spacing: 2px;
+}
+
+/* 设置按钮的按动效果 */
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /*设置变大之后空隙的*/
+
+    width: 500px;
+    height: 500px;
+    /* 设置容器的宽高 */
+    /* background-color: tomato; */
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.boxes.big {
+    /* 变大之后容器的宽和高 */
+    height: 600px;
+    width: 600px;
+}
+
+
+.box {
+    background-image: url('https://media.giphy.com/media/yALcFbrKshfoY/giphy.gif');
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* 旋转特效 */
+.boxes.big .box {
+    transform: rotate(360deg);
+}
+
+.box::after {
+    content: '';
+    background-color: #97b4e0;
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    top: 5px;
+    right: -10px;
+    transform: skewY(45deg);
+}
+
+.box::before {
+    content: '';
+    background-color: #97b4e0;
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: -10px;
+    left: 5px;
+    /* 这里的像素值貌似是自己试出来的，暂时还不知道有没有什么计算方法 */
+    transform: skewX(45deg);
+}
