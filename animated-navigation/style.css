@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #eafbff 0%,
+            #eafbff 50%,
+            #5290f9 50%,
+            #5290f9 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 80px;
+    padding: 20px;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    transition: width 0.6s linear;
+}
+
+nav.active {
+    width: 350px;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    transition: width 0.6s linear;
+}
+
+nav ul li {
+    opacity: 0;
+    margin: 0 10px;
+    transform: rotateY(0deg);
+    transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+#btn {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+nav.active #btn {
+    margin: 0 10px;
+}
+
+#btn .line {
+    height: 2px;
+    width: 20px;
+    background-color: #5290f9;
+    transition: transform 0.6s linear;
+}
+
+.line1 {
+    position: absolute;
+    top: 10px
+}
+
+.line2 {
+    position: absolute;
+    bottom: 10px;
+}
+
+nav.active .line1 {
+    transform: rotate(405deg) translateY(5.5px);
+    transition: transform 0.6s linear;
+}
+
+nav.active .line2 {
+    transform: rotate(-405deg) translateY(-5.5px);
+    transition: transform 0.6s linear;
+}
