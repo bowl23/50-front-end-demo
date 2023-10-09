@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    background-color: darkturquoise;
+    border: none;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
